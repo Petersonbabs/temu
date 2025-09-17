@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu-item {
+    color: red;
+    text-decoration: none;
+}
+
+#root>*>* {
+    margin-bottom: 1rem;
+}
+
+.card-1 {
+    height: 400px;
+    min-width: 340px;
+    max-width: 340px;
+    border: 1px solid;
+    border-radius: 10px 35px 0 10px;
+}
