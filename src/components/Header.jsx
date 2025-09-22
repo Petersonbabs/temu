@@ -1,7 +1,11 @@
 import Button from "./Button"
+// html, css, javascript
 // import "../index.css"
 
 function Header() {
+    const signup = () => {
+        alert("signing up...")
+    }
     return (
         <header style={styles.headerContainer}>
             <h2 style={styles.logo}>Logo</h2>
@@ -10,10 +14,9 @@ function Header() {
                 <a className="menu-item" href="#">Home</a>
                 <a className="menu-item" href="#">Home</a>
                 <a className="menu-item" href="#">Home</a>
-                <a className="menu-item" href="#">Home</a>
             </div>
 
-            <Button />
+            <Button text="Sign up" background="red" onClick={signup} />
         </header>
     )
 }

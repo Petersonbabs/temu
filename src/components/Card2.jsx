@@ -6,7 +6,7 @@ const Card2 = () => {
         <div>
             <h2>Welcome to Temu app</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <Button />
+            <Button text="Explore products" background="blue" />
         </div>
     )
 }

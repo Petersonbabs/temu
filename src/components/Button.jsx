@@ -1,15 +1,23 @@
+// Data Transfer:
+// Read-Only
+// state, text, number, function, object
+
+function Button({ text, background, onClick }) {
 
 
-function Button() {
     return (
-        <button style={{
-            backgroundColor: "red",
-            border: "none",
-            color: "#fff",
-            padding: ".5rem 1rem",
-            borderRadius: "5px",
-        }}>Click</button>
+        <button
+            onClick={onClick}
+            style={{
+                backgroundColor: background,
+                border: "none",
+                color: "#fff",
+                padding: ".5rem 1rem",
+                borderRadius: "5px",
+            }}>{text}</button>
     )
 }
 
 export default Button
+
+
