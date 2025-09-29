@@ -1,9 +1,14 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Button from "./components/Button"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Hooks from "./components/Hooks"
 import ProductList from "./components/ProductList"
 import ProfileCard from "./components/ProfileCard"
+import SignupForm from "./components/SignupForm"
+import LandingPage from "./pages/LandingPage"
+import NotFoundPage from "./pages/NotFoundPage"
+import SingleProduct from "./pages/SingleProduct"
 
 // class components
 // functional component
@@ -11,17 +16,26 @@ import ProfileCard from "./components/ProfileCard"
 function App() {
 
   return (
-    // signup
-    <div >
-      {/* <Header />
-      <Hero />
-      <Button text="Add to cart" background="green" /> */}
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/products" element={<ProductList />} />
+          <Route path="/signup" element={<SignupForm />} />
 
-      {/* <ProfileCard image="https://images.pexels.com/photos/35537/child-children-girl-happy.jpg" name={"John Doe"} isVerified={true} />
-      <ProfileCard image="https://images.pexels.com/photos/32504632/pexels-photo-32504632.jpeg" name="Damilare John" /> */}
+          {/* ASSIGNMENT:
+          
+            - Create Login page = "/login"
+            - Create add product page = "/add-product"
+          */}
 
-      <ProductList />
-      {/* <Hooks /> */}
+          {/* params */}
+          <Route path="/products/:id" element={<SingleProduct />} />
+
+          {/* 404 */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
