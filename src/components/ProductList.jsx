@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 
 
@@ -48,6 +49,7 @@ const ProductList = () => {
                                                     <h2>{ele.title}</h2>
                                                     <p>${ele.price}</p>
                                                     <p>{ele.category}</p>
+                                                    <Link to={`/products/${ele.id}`}>View Products</Link>
                                                 </div>
                                             ))
                                         }

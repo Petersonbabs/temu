@@ -1,3 +1,4 @@
+import Provider from "../components/providers/Provider"
 
 const LandingPage = () => {
 
