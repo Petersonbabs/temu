@@ -54,3 +54,20 @@ button:disabled {
     background-color: #999;
     cursor: not-allowed;
 }
+
+.nav {
+    display: flex;
+    background: #bbb;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.dashboard-nav {
+    background-color: black !important;
+}
