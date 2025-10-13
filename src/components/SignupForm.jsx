@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { use, useContext, useState } from "react"
+import { authContext } from "../contexts/authContext"
 
 const SignupForm = () => {
     const [formData, setFormData] = useState({
@@ -6,14 +7,15 @@ const SignupForm = () => {
         email: "",
         password: ""
     })
-    const [submitting, setSubmitting] = useState(false)
+    const { signup, submitting } = useContext(authContext)
+
 
     // const arry1 = ["john", "ade", "ola"]
     // console.log(arry1)
     // const arry2 = ["hammed", "azeez", ...arry1,]
     // console.log(arry2);
 
-    const user1 = { name: "kenny", age: 18 }
+    // const user1 = { name: "kenny", age: 18 }
     // console.log(user1)
     // const user2 = { ...user1, address: "Nigeria", name: "taiwo" }
     // console.log(user2)
@@ -29,25 +31,7 @@ const SignupForm = () => {
         const { name, value } = e.target
         setFormData(prev => ({ ...prev, [name]: value }))
     }
-    // console.log(formData)
 
-    const handleSubmit = async () => {
-        setSubmitting(true)
-        const user = { username: 'john_doe', email: 'john@example.com', password: 'pass123' };
-        try {
-            const response = await fetch("https://fakestoreapi.com/users", {
-                method: "POST",
-                body: JSON.stringify(user)
-            })
-            const data = await response.json()
-            console.log(data)
-        } catch (error) {
-            console.log(error)
-        } finally {
-            setSubmitting(false)
-        }
-    }
-    // react-router-dom
 
 
     return (
@@ -68,7 +52,7 @@ const SignupForm = () => {
                 </div>
             </div>
 
-            <button disabled={submitting} onClick={handleSubmit}>Create Account</button>
+            <button disabled={submitting} onClick={signup}>Create Account</button>
         </div>
     )
 }

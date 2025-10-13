@@ -1,6 +1,8 @@
 // import React from 'react'
 
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { authContext } from "../../contexts/authContext"
 
 const defaultMenuItems = [
     {
@@ -25,9 +27,14 @@ const defaultMenuItems = [
 
 
 const Navbar = ({ menuItems = defaultMenuItems, profile, navbarStyling }) => {
+
+    const { user, login } = useContext(authContext)
+    console.log(user)
+
     return (
         <div className={`nav ${navbarStyling}`} >
             <Link to="/"><h1>Logo</h1></Link>
+            <button onClick={login}>Login</button>
             <div style={{
                 display: "flex",
                 gap: "1.5rem",

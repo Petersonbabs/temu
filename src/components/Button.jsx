@@ -4,7 +4,6 @@
 
 function Button({ text, background, onClick }) {
 
-
     return (
         <button
             onClick={onClick}
