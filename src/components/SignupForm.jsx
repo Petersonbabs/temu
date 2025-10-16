@@ -3,27 +3,11 @@ import { authContext } from "../contexts/authContext"
 
 const SignupForm = () => {
     const [formData, setFormData] = useState({
-        fullName: "",
+        name: "",
         email: "",
         password: ""
     })
     const { signup, submitting } = useContext(authContext)
-
-
-    // const arry1 = ["john", "ade", "ola"]
-    // console.log(arry1)
-    // const arry2 = ["hammed", "azeez", ...arry1,]
-    // console.log(arry2);
-
-    // const user1 = { name: "kenny", age: 18 }
-    // console.log(user1)
-    // const user2 = { ...user1, address: "Nigeria", name: "taiwo" }
-    // console.log(user2)
-
-    // const hhh = { name: "lokl", age: 46, name: "pola" }
-    // console.log(hhh)
-
-
     const [showPassword, setShowPassword] = useState(false)
 
 
@@ -31,14 +15,16 @@ const SignupForm = () => {
         const { name, value } = e.target
         setFormData(prev => ({ ...prev, [name]: value }))
     }
+    console.log(formData);
+    
 
-
+// shared component
 
     return (
         <div className="form">
             <div>
-                <label htmlFor="fullName">Full Name</label>
-                <input type="text" name="fullName" id="fullName" onChange={handleInput} />
+                <label htmlFor="name">Full Name</label>
+                <input type="text" name="name" id="name" onChange={handleInput} />
             </div>
             <div>
                 <label htmlFor="email">Email</label>
@@ -52,7 +38,9 @@ const SignupForm = () => {
                 </div>
             </div>
 
-            <button disabled={submitting} onClick={signup}>Create Account</button>
+            <button disabled={submitting} onClick={()=>{
+                signup(formData)
+            }}>Create Account</button>
         </div>
     )
 }
