@@ -16,8 +16,9 @@ const AuthProvider = ({ children }) => {
     // Protected Route
     // HOC => HigherOrder Conpoment
 
-    const signup = async (formData) => {
-
+    const signup = async () => {
+        console.log(data)
+        return
 
         setSubmitting(true)
         try {

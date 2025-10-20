@@ -17,6 +17,7 @@ import Orders from "./pages/dashboard/Orders"
 import PublicPagesLayout from "./components/layout/PublicPages"
 import AuthProvider from "./contexts/authContext"
 import { Toaster } from "sonner"
+import ProtectedRoute from "./components/ProtectedRoute"
 
 
 function App() {
@@ -30,7 +31,9 @@ function App() {
             <Toaster richColors position="top-right" closeButton visibleToasts={3} />
             <Routes>
               <Route path="/*" element={<PublicPagesLayout />} />
-              <Route path="/dashboard/*" element={<DashboardLayout />} />
+              <Route element={<ProtectedRoute />}>
+                <Route path="/dashboard/*" element={<DashboardLayout />} />
+              </Route>
             </Routes>
           </div>
         </AuthProvider>

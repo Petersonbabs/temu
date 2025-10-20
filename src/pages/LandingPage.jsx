@@ -7,7 +7,7 @@ const LandingPage = () => {
     const { user } = useContext(authContext)
 
     useEffect(() => {
-        toast.info("Welcomt to TEMU APP") // success, error, info, warning
+        // toast.info("Welcomt to TEMU APP") // success, error, info, warning
     }, [])
 
     return (
