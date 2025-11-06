@@ -18,6 +18,7 @@ import PublicPagesLayout from "./components/layout/PublicPages"
 import AuthProvider from "./contexts/authContext"
 import { Toaster } from "sonner"
 import ProtectedRoute from "./components/ProtectedRoute"
+import OrderProvider from "./contexts/OrderContext"
 
 
 function App() {
@@ -26,22 +27,27 @@ function App() {
     <div>
       <BrowserRouter>
         <AuthProvider>
-
-          <div >
-            <Toaster richColors position="top-right" closeButton visibleToasts={3} />
-            <Routes>
-              <Route path="/*" element={<PublicPagesLayout />} />
-              <Route element={<ProtectedRoute />}>
-                <Route path="/dashboard/*" element={<DashboardLayout />} />
-              </Route>
-            </Routes>
-          </div>
+          <OrderProvider>
+            <div >
+              <Toaster richColors position="top-right" closeButton visibleToasts={3} />
+              <Routes>
+                <Route path="/*" element={<PublicPagesLayout />} />
+                <Route element={<ProtectedRoute />}>
+                  <Route path="/dashboard/*" element={<DashboardLayout />} />
+                </Route>
+              </Routes>
+            </div>
+          </OrderProvider>
         </AuthProvider>
       </BrowserRouter>
       {/* <Footer /> */}
     </div>
   )
 }
+// 1. CLOUDINARY IMAGE WITH MULTI-PART/FORMDATA
+// 2. CONTEXT API
+// 3. JSON.STRINGIFY(DATA)
+
 
 // named, default
 export default App

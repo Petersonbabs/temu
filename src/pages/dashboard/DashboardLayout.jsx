@@ -6,6 +6,7 @@ import NotFoundPage from '../NotFoundPage'
 import Dashboard404 from './Dashboard404'
 import DashboardNavbar from './components/DashboardNav'
 import Navbar from '../../components/layout/Navbar'
+import AddProduct from './AddProduct'
 
 const dashbaordMenuItems = [
     {
@@ -50,12 +51,14 @@ const Dashboard = () => {
                     <p><Link style={{ color: "white", textDecoration: "none" }} to="/dashboard">Dashbord</Link></p>
                     <p><Link style={{ color: "white", textDecoration: "none" }} to="/dashboard/orders">Order</Link></p>
                     <p><Link style={{ color: "white", textDecoration: "none" }} to="/dashboard/profile">Profile</Link></p>
+                    <p><Link style={{ color: "white", textDecoration: "none" }} to="/dashboard/add-product">Add Product</Link></p>
                 </aside>
 
                 <div style={{ width: "75%", marginLeft: "auto", padding: "1rem", background: "#bbb" }}>
                     <Routes>
-                        <Route path='/' element={<DashboardIndex />} />
+                        <Route path='/' element={<DashboardIndex />} />``
                         <Route path='/orders' element={<Orders />} />
+                        <Route path='/add-product' element={<AddProduct />} />
                         <Route path='*' element={<Dashboard404 />} />
                     </Routes>
                 </div>

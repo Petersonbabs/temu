@@ -24,10 +24,17 @@ const SignupPage = () => {
         }
     })
 
-    console.log(errors)
-
-    const onSubmit = (data) => {
-        console.log(data)
+    const handleLogin = async (Data) => {
+        try {
+            const res = await fetch("lkjhg", {
+                method: "POST",
+                body: JSON.stringify(Data)
+            })
+            const data = await res.json()
+            console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 
@@ -45,7 +52,6 @@ const SignupPage = () => {
                 {errors.email && <p className="error-message">{errors.email.message}</p>}
             </div>
             <div>
-                <label htmlFor="password">Password</label>
                 <div style={{ border: "1px solid", display: "flex", alignItems: "center", padding: ".5rem 1rem" }}>
                     <input
                         style={{ padding: 0, border: "none", outline: "none", flex: 1 }}
